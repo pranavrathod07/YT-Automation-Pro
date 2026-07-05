@@ -1,0 +1,15 @@
+.env
+client_secret.json
+tokens/
+*.pickle
+data/
+temp/
+logs/
+songs/*
+!songs/README.md
+__pycache__/
+*.pyc
+venv/
+.venv/
+.DS_Store
+Thumbs.db
