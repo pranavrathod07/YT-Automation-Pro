@@ -14,8 +14,6 @@ Fully automated pipeline that generates and uploads YouTube Shorts on a schedule
 - 🔁 Tracks used clips and song rotation so content never repeats until the pool is exhausted
 
 [![Live Site](https://img.shields.io/badge/🚀_Live_Demo-yt--automation--pro.netlify.app-ff3d7f?style=for-the-badge)](https://yt-automation-pro.netlify.app)
-
-[![Live Site](https://img.shields.io/badge/🚀_Live_Demo-yt--automation--pro.netlify.app-ff3d7f?style=for-the-badge)](https://yt-automation-pro.netlify.app)
 [![Official Website](https://img.shields.io/badge/🌐_Official_Site-yt--automation--pro--official.netlify.app-34e4ea?style=for-the-badge)](https://yt-automation-pro-official.netlify.app)
 
 ## 🏗️ How it works
