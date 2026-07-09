@@ -15,6 +15,8 @@ Fully automated pipeline that generates and uploads YouTube Shorts on a schedule
 
 [![Live Site](https://img.shields.io/badge/🚀_Live_Demo-yt--automation--pro.netlify.app-ff3d7f?style=for-the-badge)](https://yt-automation-pro.netlify.app)
 
+**[🚀 Live site](https://yt-automation-pro.netlify.app)** · **[🌐 Official Website](https://yt-automation-pro-official.netlify.app)** · **[📦 Download ZIP](../../archive/refs/heads/main.zip)**
+
 ## 🏗️ How it works
 
 ```
