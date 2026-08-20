@@ -18,17 +18,12 @@ TEMP_DIR = "temp"
 LOGS_DIR = "logs"
 TOKENS_DIR = "tokens"
 
-# Har account ka ek naam do (jo bhi chaho, bas unique hona chahiye).
-# Isi naam se uska state file (data/state_<name>.json) aur
-# token file (tokens/token_<name>.pickle) alag-alag bante hai.
+# Single account ke liye sirf ek hi name rakho
 ACCOUNTS = [
-    "channel1",
-    "channel2",
-    # "channel3",  # jitne channels chahiye utne yaha add kar do
+    "main_channel",
 ]
 
 # Rotating pool of search terms used to fetch sports clips from Pixabay.
-# Feel free to add/remove terms.
 SPORT_QUERIES = [
     "football player",
     "cricket player",
