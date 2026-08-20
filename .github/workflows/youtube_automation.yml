@@ -1,0 +1,53 @@
+name: YT Automation Pro - Scheduled Run
+
+on:
+  schedule:
+    # UTC Time zone me set hai (Indian Standard Time se 5 hours 30 mins peeche)
+    # Ye schedule IST ke hisab se Daily Subah 8:00 AM, Dopahar 2:00 PM aur Raat 8:00 PM par chalega
+    - cron: '30 2,8,14 * * *'
+  
+  # Manual trigger karne ke liye button bhi rakha hai
+  workflow_dispatch:
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Python Setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: System Dependencies Install (FFmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Python Requirements Install
+        run: |
+          cd "YT Automation Pro"
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Execute YT Automation Script
+        env:
+          # Apne sare environment variables yahan mapping me add kar do
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          cd "YT Automation Pro"
+          python main.py
+
+      - name: Save Updated State
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto-update state_manager data [skip ci]" || exit 0
+          git push
